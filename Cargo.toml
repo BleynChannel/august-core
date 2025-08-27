@@ -14,7 +14,7 @@ futures = { version = "0.3.31", features = ["alloc", "async-await", "std"] }
 [dev-dependencies]
 tokio = "1.47.1"
 
-[dependencies.august-plugin-system]
-git = "https://github.com/BleynChannel/august-plugin-system.git"
+[dependencies.plux]
+git = "https://github.com/BleynChannel/plux-rs.git"
 tag = "1.0.0-alpha.3"
 features = ["derive", "archive"]
