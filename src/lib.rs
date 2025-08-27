@@ -1,9 +1,9 @@
-pub mod storage;
-pub mod nlp;
-pub mod planner;
-pub mod executor;
-pub mod context;
-pub mod plugin;
+mod storage;
+mod nlp;
+mod planner;
+mod executor;
+mod context;
+mod plugin;
 mod config;
 mod core;
 
