@@ -1,8 +1,8 @@
 use thiserror::Error;
 
+use crate::executor::ExecutorError;
 use crate::nlp::NlpError;
 use crate::planner::PlannerError;
-use crate::executor::ExecutorError;
 use crate::storage::StorageError;
 
 #[derive(Error, Debug)]

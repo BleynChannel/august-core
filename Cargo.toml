@@ -20,7 +20,8 @@ thiserror = "2.0"
 
 # Configuration
 toml = { version = "0.9" }
-config = { version = "0.15", features = ["toml"] }
+#? We need this crate?
+# config = { version = "0.15", features = ["toml"] }
 
 # Storage
 sled = "0.34"
