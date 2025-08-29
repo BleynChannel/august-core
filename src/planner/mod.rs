@@ -1,5 +1,6 @@
 use serde::{Deserialize, Serialize};
 use thiserror::Error;
+use tracing::info;
 
 //? Maybe replace with petgraph?
 #[derive(Debug, Serialize, Deserialize)]
@@ -26,7 +27,7 @@ impl Planner {
 
     pub fn plan(&self, nlp_response: super::nlp::NlpResponse) -> Result<TaskGraph, PlannerError> {
         // Simulate planning logic
-        log::info!("Planning tasks based on NLP response: {:?}", nlp_response);
+        info!("Planning tasks based on NLP response: {:?}", nlp_response);
         Ok(TaskGraph {
             nodes: vec![],
             edges: vec![], // For simplicity, no dependencies in mock

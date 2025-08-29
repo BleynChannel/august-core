@@ -1,6 +1,7 @@
 use async_trait::async_trait;
 use serde::{Deserialize, Serialize};
 use thiserror::Error;
+use tracing::info;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct NlpRequest {
@@ -26,7 +27,7 @@ pub struct MockNlpProcessor;
 #[async_trait]
 impl NlpProcessor for MockNlpProcessor {
     async fn process(&self, request: NlpRequest) -> Result<NlpResponse, NlpError> {
-        log::info!("Mock NLP processing request: {:?}", request);
+        info!("Mock NLP processing request: {:?}", request);
         // Simulate some NLP processing
         Ok(NlpResponse {})
     }

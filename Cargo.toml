@@ -4,22 +4,37 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-sled = "0.34.7"
-serde = { version = "1.0.219", features = ["derive"] }
-serde_json = "1.0.143"
-async-trait = "0.1.89"
-log = "0.4.27"
-futures = { version = "0.3.31", features = ["alloc", "async-await", "std"] }
-thiserror = "2.0.16"
-hashbrown = { version = "0.15.5", features = ["serde", "rayon"] }
-rayon = "1.11.0"
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
 
-[dev-dependencies]
-anyhow = "1.0.99"
-env_logger = "0.11.8"
-tokio = { version = "1.47.1", features = ["full"] }
+# Parallelism
+async-trait = "0.1"
+futures = { version = "0.3", features = ["alloc", "async-await", "std"] }
+rayon = "1.11"
 
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+thiserror = "2.0"
+
+# Configuration
+toml = { version = "0.9" }
+config = { version = "0.15", features = ["toml"] }
+
+# Storage
+sled = "0.34"
+
+# Other
+hashbrown = { version = "0.15", features = ["serde", "rayon"] }
+
+# Plugin System
 [dependencies.plux]
 git = "https://github.com/BleynChannel/plux-rs.git"
 tag = "1.0.0-alpha.3"
 features = ["derive", "archive"]
+
+[dev-dependencies]
+anyhow = "1.0"
+env_logger = "0.11"
+tokio = { version = "1.47", features = ["full"] }
